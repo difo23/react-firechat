@@ -1,35 +1,35 @@
-import {
-  db,
-  googleAuthProvider,
-  firebase
-} from './config/firebase';
-import { Button, Channel } from './components';
 
-//TODO: Hacer el login con Google.
+import { Button, Channel } from './components';
+import { signInWithGoogle, signOut } from './login';
+import { useAuthState } from './hooks';
+import { firebase } from './config/firebase';
+
 
 function App() {
+  //Entegracion del hook useAuthState
+  const { user, initializing } = useAuthState(firebase.auth());
+  // Renderezar en funcion de la exitencia de un usuario con operador ternario.
+  
 
-  const signInWithGoogle = async () => {
-
-    // Coloca el lenguje de preferencia del dispositivo
-    firebase.auth().useDeviceLanguage();
-
-    // Incio el procedo de login dentro de un try ... catch
-
-    try {
-      await firebase.auth().signInWithPopup(googleAuthProvider);
-
-    } catch (e) {
-      console.error(e.message);
+  const renderLoading = () => {
+    if (initializing) {
+      return <div>
+        <h1>Loading ...</h1>
+      </div>
     }
-
-  };
-
-
-  // Renderizar el Componente Button
+  }
   return (
     <div>
-      <Button onClick={signInWithGoogle} > Sing in with Google</Button>
+      { renderLoading()}
+      {
+        user ? (
+          <>
+            <Button onClick={signOut} > Logout Google</Button>
+            <p> Bienvenidos al CHAT!</p>
+          </>
+        ) : <Button onClick={signInWithGoogle} > Sing in with Google</Button>
+      }
+
     </div>
   );
 }

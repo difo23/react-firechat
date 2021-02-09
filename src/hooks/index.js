@@ -1,4 +1,4 @@
-import useAuthState from 'useAuthState';
+import useAuthState from './useAuthState';
 
 export {
     useAuthState

@@ -9,7 +9,7 @@ function App() {
   //Entegracion del hook useAuthState
   const { user, initializing } = useAuthState(firebase.auth());
   // Renderezar en funcion de la exitencia de un usuario con operador ternario.
-  
+
 
   const renderLoading = () => {
     if (initializing) {
@@ -26,6 +26,7 @@ function App() {
           <>
             <Button onClick={signOut} > Logout Google</Button>
             <p> Bienvenidos al CHAT!</p>
+            <Channel user={user} />
           </>
         ) : <Button onClick={signInWithGoogle} > Sing in with Google</Button>
       }

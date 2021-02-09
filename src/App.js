@@ -14,7 +14,7 @@ function App() {
       {
         user ? (
           <>
-            <Button onClick={signOut} > Sing in with Google</Button>
+            <Button onClick={signOut} > Logout Google</Button>
             <p> Bienvenidos al CHAT!</p>
           </>
         ) : <Button onClick={signInWithGoogle} > Sing in with Google</Button>

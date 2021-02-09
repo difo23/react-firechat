@@ -2,6 +2,8 @@
 import Button from './components/Button';
 import { signInWithGoogle, signOut } from './login';
 import { useAuthState } from './hooks';
+import { firebase } from './config/firebase';
+
 
 function App() {
   //Entegracion del hook useAuthState

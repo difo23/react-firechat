@@ -32,7 +32,15 @@ const Channel = ({ user = null }) => {
     }, [])
 
 
-    return <ul></ul>;
+    return (
+        <ul>
+            { messages.map(message => (
+                //Todos los mensajes seran mostrados en una lista. 
+
+                <li key={message.id}>{message.text}</li>
+            ))}
+        </ul>
+    );
 };
 
 export default Channel;

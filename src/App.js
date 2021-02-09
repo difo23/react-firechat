@@ -3,7 +3,7 @@ import {
   googleAuthProvider,
   firebase
 } from './config/firebase';
-import Button from './components/Button';
+import { Button, Channel } from './components';
 
 //TODO: Hacer el login con Google.
 

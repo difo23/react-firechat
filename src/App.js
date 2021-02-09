@@ -17,7 +17,7 @@ function App() {
     // Incio el procedo de login dentro de un try ... catch
 
     try {
-      await firebase.auth.singnInWithGooglePopup(googleAuthProvider);
+      await firebase.auth().signInWithPopup(googleAuthProvider);
 
     } catch (e) {
       console.error(e.message);

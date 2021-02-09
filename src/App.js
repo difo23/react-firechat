@@ -9,8 +9,18 @@ function App() {
   //Entegracion del hook useAuthState
   const { user, initializing } = useAuthState(firebase.auth());
   // Renderezar en funcion de la exitencia de un usuario con operador ternario.
+  
+
+  const renderLoading = () => {
+    if (initializing) {
+      return <div>
+        <h1>Loading ...</h1>
+      </div>
+    }
+  }
   return (
     <div>
+      { renderLoading()}
       {
         user ? (
           <>

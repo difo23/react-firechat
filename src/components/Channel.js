@@ -1,7 +1,9 @@
 
 
 import { useEffect, useState } from 'react';
-import { db } from '../config/firebase';
+import { db, firebase } from '../config/firebase';
+import Message from './Message';
+
 
 const Channel = ({ user = null }) => {
     const [messages, setMessages] = useState([]);
@@ -32,14 +34,60 @@ const Channel = ({ user = null }) => {
     }, [])
 
 
-    return (
-        <ul>
-            { messages.map(message => (
-                //Todos los mensajes seran mostrados en una lista. 
+    //Codigo para agregar nuevos mensajes
+    const { uid, displayName, photoURL } = user;
+    const [newMessage, setNewMessage] = useState('');
 
-                <li key={message.id}>{message.text}</li>
-            ))}
-        </ul>
+    const handleMessageOnChange = (e) => {
+        e.preventDefault();
+        setNewMessage(e.target.value);
+    }
+
+    const handleOnSubmit = e => {
+        e.preventDefault();
+
+        const trimmedMessage = newMessage.trim();
+        if (trimmedMessage) {
+            // Add new message in Firestore
+            messagesRef.add({
+                text: trimmedMessage,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                uid,
+                displayName,
+                photoURL,
+            });
+            // Clear input field
+            setNewMessage('');
+        }
+    };
+
+    return (
+        <>
+            <ul>
+                {messages.map(message => (
+                    <li key={message.id}>
+                        <Message {...message} />
+                    </li>
+                ))}
+            </ul>
+
+            <form
+                onSubmit={handleOnSubmit}>
+                <input
+                    ref={inputRef}
+                    type="text"
+                    value={newMessage}
+                    onChange={handleMessageOnChange}
+                    placeholder="Escribe tu mensaje aqui..."
+                />
+                <button
+                    type="submit"
+                    disabled={!newMessage}
+                >
+                    Send
+        </button>
+            </form>
+        </>
     );
 };
 

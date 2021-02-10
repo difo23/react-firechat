@@ -1,6 +1,6 @@
 
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { db, firebase } from '../config/firebase';
 import Message from './Message';
 
@@ -43,6 +43,10 @@ const Channel = ({ user = null }) => {
         setNewMessage(e.target.value);
     }
 
+
+    const messagesRef = db.collection('messages');
+
+
     const handleOnSubmit = e => {
         e.preventDefault();
 
@@ -60,6 +64,14 @@ const Channel = ({ user = null }) => {
             setNewMessage('');
         }
     };
+
+    const inputRef = useRef();
+    useEffect(() => {
+        if (inputRef.current) {
+            inputRef.current.focus();
+        }
+    }, [inputRef]);
+
 
     return (
         <>

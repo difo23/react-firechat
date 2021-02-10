@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/react-firechat/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/react-firechat/static/js/main.393c4eee.chunk.js",
-    "main.js.map": "/react-firechat/static/js/main.393c4eee.chunk.js.map",
-    "runtime-main.js": "/react-firechat/static/js/runtime-main.aeb1da0e.js",
-    "runtime-main.js.map": "/react-firechat/static/js/runtime-main.aeb1da0e.js.map",
-    "static/js/2.439fa948.chunk.js": "/react-firechat/static/js/2.439fa948.chunk.js",
-    "static/js/2.439fa948.chunk.js.map": "/react-firechat/static/js/2.439fa948.chunk.js.map",
-    "static/js/3.e5aaaa57.chunk.js": "/react-firechat/static/js/3.e5aaaa57.chunk.js",
-    "static/js/3.e5aaaa57.chunk.js.map": "/react-firechat/static/js/3.e5aaaa57.chunk.js.map",
+    "main.css": "/react-firechat/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/react-firechat/static/js/main.95c3e28b.chunk.js",
+    "main.js.map": "/react-firechat/static/js/main.95c3e28b.chunk.js.map",
+    "runtime-main.js": "/react-firechat/static/js/runtime-main.064ceb55.js",
+    "runtime-main.js.map": "/react-firechat/static/js/runtime-main.064ceb55.js.map",
+    "static/js/2.58b2a60c.chunk.js": "/react-firechat/static/js/2.58b2a60c.chunk.js",
+    "static/js/2.58b2a60c.chunk.js.map": "/react-firechat/static/js/2.58b2a60c.chunk.js.map",
+    "static/js/3.336f97a6.chunk.js": "/react-firechat/static/js/3.336f97a6.chunk.js",
+    "static/js/3.336f97a6.chunk.js.map": "/react-firechat/static/js/3.336f97a6.chunk.js.map",
     "index.html": "/react-firechat/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/react-firechat/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.439fa948.chunk.js.LICENSE.txt": "/react-firechat/static/js/2.439fa948.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/react-firechat/static/media/logo.6ce24c58.svg"
+    "static/css/main.6dea0f05.chunk.css.map": "/react-firechat/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.58b2a60c.chunk.js.LICENSE.txt": "/react-firechat/static/js/2.58b2a60c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.aeb1da0e.js",
-    "static/js/2.439fa948.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.393c4eee.chunk.js"
+    "static/js/runtime-main.064ceb55.js",
+    "static/js/2.58b2a60c.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.95c3e28b.chunk.js"
   ]
 }
